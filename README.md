@@ -132,23 +132,37 @@ following command: `frida-ps -U`.
 - Several REPL functions were provided by House to make the testing easier:
 	- `inspectObject(obj)` uses `java.lang.reflect` to inspect fields information within an object.
 	- `setRetval(ret)` takes a parameter and will try to cast it to the correct return type using the original return value's constructor.
+    - `getStackTrace()` will print the stack trace.
 	- More REPL functions will be added in the future.
 
 	![int3.gif](./gifs/int3.gif)
 
+**Note:** For constructor method hooking/intercept, input `$init` as method name.
 
 ## FAQ 
 #### Prerequisite:
 
 To make House work; you would need:
 
-1. A rooted android device with frida-server running plugged in your computer.
+1. A rooted android device with frida-server running plugged in your computer, use only one USB device is recommended.
 2. Local frida-python version matches frida-server's.
 
 #### Cannot get device? Does not work?
 Try to restart **both** the frida server and House, if still not working, please file an issue.
 
+#### Time out error?
+Often occues when there are multiple USB devices connected, try to restart the target application.
+
 #### Frida error?
 House has been tested using Frida version 11.0.9; there might be some issues with some other versions, also make sure frida-python matches frida-server's version. If still not working, try to run the generated frida scripts manually to see if it works.
+
+
+## Contact
+If you have more questions about House, or want to help extending it, feel free to contact:
+
+[@Hao_on_b3at](https://twitter.com/Hao_on_b3at)
+
+Or send an email to: [Hao Ke](mailto:hao.ke@nccgroup.trust?Subject=House)
+
 
 
